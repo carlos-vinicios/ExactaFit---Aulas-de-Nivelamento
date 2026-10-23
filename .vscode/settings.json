@@ -1,0 +1,22 @@
+{
+  // Pylance: checagem de tipos básica no editor.
+  "python.analysis.typeCheckingMode": "basic",
+
+  // Ruff formata e organiza os imports ao salvar.
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+
+  // Esconde pastas geradas pelas ferramentas.
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true
+  },
+  "editor.rulers": [88]
+}

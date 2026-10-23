@@ -1,0 +1,4 @@
+# Pacotes necessários para EXECUTAR os exercícios.
+# Os exercícios usam só a biblioteca padrão do Python, por isso esta lista está vazia.
+# Um projeto que usasse, por exemplo, a biblioteca requests teria aqui uma linha como:
+#     requests==2.34.2

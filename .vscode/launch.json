@@ -1,0 +1,31 @@
+{
+  // Configurações de execução e depuração (F5).
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Prática 2: relatório da turma",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercicios/aula1/p2_ambiente/relatorio.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Aula 2: script legado (turma.csv)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/exercicios/aula2/p3_legado/relatorio_legado.py",
+      "args": ["${workspaceFolder}/exercicios/aula2/p3_legado/turma.csv"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Arquivo atual",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

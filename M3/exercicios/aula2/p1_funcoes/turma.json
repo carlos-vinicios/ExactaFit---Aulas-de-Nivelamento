@@ -1,0 +1,12 @@
+[
+  {"nome": "  ana   BEATRIZ ", "notas": [8.5, 7.0, 9.0]},
+  {"nome": "bruno costa", "notas": [5.0, 5.0, 5.0]},
+  {"nome": "CARLA mendes", "notas": [10.0, 9.5, 10.0]},
+  {"nome": "Diego  Ramos", "notas": [4.0, 3.5, 6.0]},
+  {"nome": "elisa fonseca ", "notas": [6.5, 7.5, 6.0]},
+  {"nome": "Fábio Nunes", "notas": [7.0, 7.0, 7.0]},
+  {"nome": " gabriela LIMA", "notas": [9.0, 8.0, 8.5]},
+  {"nome": "heitor souza", "notas": [2.0, 5.5, 4.0]},
+  {"nome": "ÍRIS carvalho", "notas": [7.5, 6.0, 8.0]},
+  {"nome": "joão pedro", "notas": [5.5, 6.0, 4.5]}
+]

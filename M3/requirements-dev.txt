@@ -1,0 +1,13 @@
+# Pacotes necessários para DESENVOLVER: ferramentas que quem só executa não precisa.
+# Instale com:  pip install -r requirements-dev.txt
+-r requirements.txt
+
+# Gerado com pip freeze num ambiente onde se instalou só mypy e ruff.
+# As demais linhas são dependências deles, com as versões exatas que foram testadas.
+ast_serialize==0.13.0
+librt==0.16.0
+mypy==2.4.0
+mypy_extensions==1.1.0
+pathspec==1.1.1
+ruff==0.17.1
+typing_extensions==4.16.0
