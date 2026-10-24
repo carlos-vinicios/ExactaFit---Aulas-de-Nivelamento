@@ -9,8 +9,7 @@
     "ms-python.mypy-type-checker",
 
     "qwtel.sqlite-viewer",
-    "ms-ossdata.vscode-pgsql",
-    "bierner.markdown-mermaid",
+    "ms-ossdata.vscode-pgsql",,
     "mechatroner.rainbow-csv",
     "task.vscode-task"
   ]
