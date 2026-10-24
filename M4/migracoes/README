@@ -1,0 +1,9 @@
+Migrações do banco da escola (Alembic).
+
+  alembic upgrade head        aplica todas as migrações pendentes
+  alembic downgrade -1        desfaz a última
+  alembic current             mostra a revisão aplicada no banco
+  alembic history             lista as revisões
+  alembic revision -m "..." --rev-id 0002    cria uma revisão nova com id legível
+
+O banco alvo vem de DATABASE_URL (veja .env.exemplo).

@@ -1,0 +1,24 @@
+# PostgreSQL para a Aula 5.
+#   docker compose up -d --wait    sobe o banco e espera ficar pronto
+#   docker compose exec db psql -U escola -d escola
+#   docker compose down            para (os dados ficam no volume)
+#   docker compose down -v         para e apaga os dados
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: escola
+      POSTGRES_PASSWORD: escola
+      POSTGRES_DB: escola
+    ports:
+      - "5432:5432"
+    volumes:
+      - dados_pg:/var/lib/postgresql   # a partir do PostgreSQL 18 o volume é montado aqui
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U escola -d escola"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+volumes:
+  dados_pg:

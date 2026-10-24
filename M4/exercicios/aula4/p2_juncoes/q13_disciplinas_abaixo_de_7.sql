@@ -1,0 +1,19 @@
+-- Q13. Como a q12, mas só as disciplinas com média abaixo de 7, e com o número de
+-- alunos com nota; da menor média para a maior.
+-- Colunas: codigo, media, alunos
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q13_disciplinas_abaixo_de_7.sql
+--
+-- Resultado esperado:
+--   codigo | media | alunos
+--   -------+-------+-------
+--   ES101  | 5.99  | 11
+--   ES102  | 6.14  | 11
+--   ES202  | 6.51  | 8
+--   CC101  | 6.69  | 9
+--   CC202  | 6.84  | 9
+--   CC102  | 6.88  | 13
+--   SI102  | 6.92  | 12
+--   (7 linhas)
+

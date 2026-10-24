@@ -1,0 +1,14 @@
+-- Q14. Alunos que não estão matriculados em nenhuma turma, em ordem de matrícula.
+-- Colunas: matricula, nome
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q14_alunos_sem_matricula.sql
+--
+-- Resultado esperado:
+--   matricula | nome
+--   ----------+---------------
+--   2026005   | Olívia Santos
+--   2026010   | Eduarda Castro
+--   2026015   | William Torres
+--   (3 linhas)
+

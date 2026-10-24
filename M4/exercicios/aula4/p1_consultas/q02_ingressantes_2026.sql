@@ -1,0 +1,19 @@
+-- Q02. Matrícula e nome dos alunos que ingressaram em 2026, ordenados pela matrícula.
+-- A coluna data_ingresso guarda texto no formato AAAA-MM-DD.
+-- Colunas: matricula, nome
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p1_consultas/q02_ingressantes_2026.sql
+--
+-- Resultado esperado:
+--   matricula | nome
+--   ----------+--------------------
+--   2026001   | Carla Mendes
+--   2026002   | Fábio Nunes
+--   2026003   | Íris Carvalho
+--   2026004   | Lucas Martins
+--   ...
+--   2026014   | Sabrina Vasconcelos
+--   2026015   | William Torres
+--   (15 linhas)
+

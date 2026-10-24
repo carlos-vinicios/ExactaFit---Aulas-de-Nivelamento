@@ -1,0 +1,17 @@
+-- Q15. Boletim do aluno de matrícula 2025001: semestre, código e nome da disciplina
+-- e nota (vazia se ainda não lançada), por semestre e código.
+-- Colunas: semestre, codigo, disciplina, nota
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q15_boletim.sql
+--
+-- Resultado esperado:
+--   semestre | codigo | disciplina            | nota
+--   ---------+--------+-----------------------+-----
+--   2026.1   | CC101  | Algoritmos            | 9.9
+--   2026.1   | CC102  | Estruturas de Dados   | 4.5
+--   2026.1   | CC202  | Redes de Computadores | 5.6
+--   2026.2   | CC102  | Estruturas de Dados   | NULL
+--   2026.2   | CC201  | Banco de Dados        | NULL
+--   (5 linhas)
+

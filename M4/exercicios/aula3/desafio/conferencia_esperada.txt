@@ -1,0 +1,60 @@
+ok (nenhum comando devolveu linhas)
+> INSERT INTO livro (id, isbn, titulo) VALUES (1, '978-0-00-000001-1', 'Dom Casmurro');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO livro (id, isbn, titulo) VALUES (2, '978-0-00-000002-2', 'Pense em Python');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO leitor (id, nome, email) VALUES (1, 'Lara Pinheiro', 'lara@campus.edu');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO leitor (id, nome, email) VALUES (2, 'Caio Teles', 'caio@campus.edu');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva) VALUES (1, 1, '2026-04-01');
+ok: 1 linha(s) afetada(s)
+
+> SELECT livro_id, leitor_id, status FROM reserva;
+livro_id | leitor_id | status
+---------+-----------+-------
+1        | 1         | ativa
+(1 linha)
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva, status) VALUES (2, 2, '2026-04-01', 'esquecida');
+ERRO IntegrityError: CHECK constraint failed: status IN ('ativa', 'atendida', 'cancelada')
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva) VALUES (99, 1, '2026-04-01');
+ERRO IntegrityError: FOREIGN KEY constraint failed
+
+> INSERT INTO reserva (livro_id, leitor_id) VALUES (2, 2);
+ERRO IntegrityError: NOT NULL constraint failed: reserva.data_reserva
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva) VALUES (1, 1, '2026-04-02');
+ERRO IntegrityError: UNIQUE constraint failed: reserva.livro_id, reserva.leitor_id
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva) VALUES (1, 2, '2026-04-02');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva) VALUES (2, 1, '2026-04-02');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva, status) VALUES (1, 1, '2026-03-01', 'atendida');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva, status) VALUES (1, 1, '2026-03-10', 'cancelada');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO reserva (livro_id, leitor_id, data_reserva, status) VALUES (1, 1, '2026-03-20', 'cancelada');
+ok: 1 linha(s) afetada(s)
+
+> UPDATE reserva SET status = 'ativa' WHERE data_reserva = '2026-03-10';
+ERRO IntegrityError: UNIQUE constraint failed: reserva.livro_id, reserva.leitor_id
+
+> SELECT status, count(*) AS reservas FROM reserva GROUP BY status ORDER BY status;
+status    | reservas
+----------+---------
+atendida  | 1
+ativa     | 3
+cancelada | 2
+(3 linhas)
+

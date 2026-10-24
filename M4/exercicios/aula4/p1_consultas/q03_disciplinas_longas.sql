@@ -1,0 +1,16 @@
+-- Q03. Código, nome e carga horária das disciplinas com 80 horas ou mais,
+-- da maior carga para a menor; em caso de empate, pelo código.
+-- Colunas: codigo, nome, carga_horaria
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p1_consultas/q03_disciplinas_longas.sql
+--
+-- Resultado esperado:
+--   codigo | nome                    | carga_horaria
+--   -------+-------------------------+--------------
+--   CC101  | Algoritmos              | 80
+--   CC102  | Estruturas de Dados     | 80
+--   ES201  | Arquitetura de Software | 80
+--   SI102  | Programação Web         | 80
+--   (4 linhas)
+

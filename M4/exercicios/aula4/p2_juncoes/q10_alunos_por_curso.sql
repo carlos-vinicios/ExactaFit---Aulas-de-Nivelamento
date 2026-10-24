@@ -1,0 +1,14 @@
+-- Q10. Sigla de cada curso e quantos alunos ele tem, em ordem de sigla.
+-- Colunas: sigla, alunos
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q10_alunos_por_curso.sql
+--
+-- Resultado esperado:
+--   sigla | alunos
+--   ------+-------
+--   CC    | 15
+--   ES    | 15
+--   SI    | 15
+--   (3 linhas)
+

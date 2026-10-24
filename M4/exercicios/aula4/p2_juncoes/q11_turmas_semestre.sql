@@ -1,0 +1,24 @@
+-- Q11. Turmas do semestre 2026.1: código e nome da disciplina e nome do professor,
+-- em ordem de código.
+-- Colunas: codigo, disciplina, professor
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q11_turmas_semestre.sql
+--
+-- Resultado esperado:
+--   codigo | disciplina                            | professor
+--   -------+---------------------------------------+-----------------
+--   CC101  | Algoritmos                            | Helena Prado
+--   CC102  | Estruturas de Dados                   | Ricardo Moura
+--   CC201  | Banco de Dados                        | Juliana Teixeira
+--   CC202  | Redes de Computadores                 | Marcos Vieira
+--   ES101  | Engenharia de Requisitos              | André Nogueira
+--   ES102  | Testes de Software                    | Camila Rocha
+--   ES201  | Arquitetura de Software               | Ricardo Moura
+--   ES202  | DevOps                                | Fernando Gomes
+--   SI101  | Fundamentos de Sistemas de Informação | Patrícia Lopes
+--   SI102  | Programação Web                       | Fernando Gomes
+--   SI201  | Banco de Dados Aplicado               | Juliana Teixeira
+--   SI202  | Gestão de Projetos                    | Camila Rocha
+--   (12 linhas)
+

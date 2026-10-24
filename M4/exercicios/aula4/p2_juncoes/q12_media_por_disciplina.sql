@@ -1,0 +1,24 @@
+-- Q12. Média das notas de cada disciplina no semestre 2026.1, arredondada em 2 casas,
+-- da maior média para a menor; em caso de empate, pelo código.
+-- Colunas: codigo, media
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q12_media_por_disciplina.sql
+--
+-- Resultado esperado:
+--   codigo | media
+--   -------+------
+--   CC201  | 7.77
+--   SI101  | 7.17
+--   SI202  | 7.03
+--   ES201  | 7.02
+--   SI201  | 7.01
+--   SI102  | 6.92
+--   CC102  | 6.88
+--   CC202  | 6.84
+--   CC101  | 6.69
+--   ES202  | 6.51
+--   ES102  | 6.14
+--   ES101  | 5.99
+--   (12 linhas)
+

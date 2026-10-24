@@ -1,0 +1,20 @@
+-- Q16. Alunos cuja média das notas lançadas é maior que a média geral de todas as
+-- notas lançadas da escola. Média arredondada em 2 casas, da maior para a menor;
+-- em caso de empate, pela matrícula.
+-- Colunas: matricula, nome, media
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q16_acima_da_media.sql
+--
+-- Resultado esperado:
+--   matricula | nome             | media
+--   ----------+------------------+------
+--   2025017   | Zeca Lacerda     | 9.2
+--   2025003   | Diego Ramos      | 8.53
+--   2025002   | Bruno Costa      | 8.1
+--   2025019   | Cecília Araújo   | 8.1
+--   ...
+--   2026007   | Úrsula Campos    | 6.97
+--   2025024   | Júlio César Reis | 6.87
+--   (21 linhas)
+

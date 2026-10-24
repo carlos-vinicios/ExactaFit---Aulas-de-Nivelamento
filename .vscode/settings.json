@@ -1,6 +1,7 @@
 {
   // Pylance: checagem de tipos básica no editor.
   "python.analysis.typeCheckingMode": "basic",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
 
   // Ruff formata e organiza os imports ao salvar.
   "[python]": {
@@ -10,6 +11,9 @@
       "source.fixAll.ruff": "explicit",
       "source.organizeImports.ruff": "explicit"
     }
+  },
+  "files.associations": {
+    "*.sql": "sql"
   },
 
   // Esconde pastas geradas pelas ferramentas.

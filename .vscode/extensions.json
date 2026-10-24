@@ -6,6 +6,12 @@
     "ms-python.debugpy",
     "ms-python.vscode-python-envs",
     "charliermarsh.ruff",
-    "ms-python.mypy-type-checker"
+    "ms-python.mypy-type-checker",
+
+    "qwtel.sqlite-viewer",
+    "ms-ossdata.vscode-pgsql",
+    "bierner.markdown-mermaid",
+    "mechatroner.rainbow-csv",
+    "task.vscode-task"
   ]
 }

@@ -1,0 +1,97 @@
+ok (nenhum comando devolveu linhas)
+> INSERT INTO autor (id, nome) VALUES (1, 'Machado de Assis');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO livro (id, isbn, titulo, ano) VALUES (1, '978-0-00-000001-1', 'Dom Casmurro', 1899);
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO livro_autor (livro_id, autor_id) VALUES (1, 1);
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO exemplar (id, tombo, livro_id) VALUES (1, 'T0001', 1);
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO leitor (id, nome, email) VALUES (1, 'Lara Pinheiro', 'lara@campus.edu');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO livro (titulo) VALUES ('Sem ISBN');
+ERRO IntegrityError: NOT NULL constraint failed: livro.isbn
+
+> INSERT INTO livro (isbn, titulo) VALUES ('978-0-00-000001-1', 'Outro');
+ERRO IntegrityError: UNIQUE constraint failed: livro.isbn
+
+> INSERT INTO livro (isbn) VALUES ('978-0-00-000002-2');
+ERRO IntegrityError: NOT NULL constraint failed: livro.titulo
+
+> INSERT INTO livro (isbn, titulo, ano) VALUES ('978-0-00-000003-3', 'Futuro', 3000);
+ERRO IntegrityError: CHECK constraint failed: ano BETWEEN 1450 AND 2100
+
+> INSERT INTO livro_autor (livro_id, autor_id) VALUES (1, 1);
+ERRO IntegrityError: UNIQUE constraint failed: livro_autor.livro_id, livro_autor.autor_id
+
+> INSERT INTO autor (id, nome) VALUES (2, 'Outro Autor');
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO livro_autor (livro_id, autor_id) VALUES (1, 2);
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO livro_autor (livro_id, autor_id) VALUES (1, 99);
+ERRO IntegrityError: FOREIGN KEY constraint failed
+
+> INSERT INTO exemplar (tombo, livro_id) VALUES ('T0100', 99);
+ERRO IntegrityError: FOREIGN KEY constraint failed
+
+> INSERT INTO exemplar (tombo) VALUES ('T0101');
+ERRO IntegrityError: NOT NULL constraint failed: exemplar.livro_id
+
+> INSERT INTO exemplar (tombo, livro_id) VALUES ('T0001', 1);
+ERRO IntegrityError: UNIQUE constraint failed: exemplar.tombo
+
+> SELECT tombo, estado FROM exemplar;
+tombo | estado
+------+-------
+T0001 | bom
+(1 linha)
+
+> INSERT INTO exemplar (tombo, livro_id, estado) VALUES ('T0002', 1, 'perdido');
+ERRO IntegrityError: CHECK constraint failed: estado IN ('bom', 'regular', 'danificado')
+
+> INSERT INTO leitor (nome) VALUES ('Sem Email');
+ERRO IntegrityError: NOT NULL constraint failed: leitor.email
+
+> INSERT INTO leitor (nome, email) VALUES ('Outra Lara', 'lara@campus.edu');
+ERRO IntegrityError: UNIQUE constraint failed: leitor.email
+
+> INSERT INTO emprestimo (exemplar_id, leitor_id, data_emprestimo, data_prevista) VALUES (1, 1, '2026-03-02', '2026-03-16');
+ok: 1 linha(s) afetada(s)
+
+> UPDATE emprestimo SET data_devolucao = '2026-03-10' WHERE exemplar_id = 1;
+ok: 1 linha(s) afetada(s)
+
+> INSERT INTO emprestimo (exemplar_id, leitor_id, data_emprestimo, data_prevista) VALUES (1, 99, '2026-03-02', '2026-03-16');
+ERRO IntegrityError: FOREIGN KEY constraint failed
+
+> INSERT INTO emprestimo (exemplar_id, leitor_id, data_emprestimo) VALUES (1, 1, '2026-03-02');
+ERRO IntegrityError: NOT NULL constraint failed: emprestimo.data_prevista
+
+> INSERT INTO emprestimo (exemplar_id, leitor_id, data_emprestimo, data_prevista, data_devolucao) VALUES (1, 1, '2026-03-02', '2026-03-16', '2026-03-01');
+ERRO IntegrityError: CHECK constraint failed: data_devolucao IS NULL OR data_devolucao >= data_emprestimo
+
+> DELETE FROM livro WHERE id = 1;
+ERRO IntegrityError: FOREIGN KEY constraint failed
+
+> DELETE FROM emprestimo;
+ok: 1 linha(s) afetada(s)
+
+> DELETE FROM exemplar WHERE livro_id = 1;
+ok: 1 linha(s) afetada(s)
+
+> DELETE FROM livro WHERE id = 1;
+ok: 1 linha(s) afetada(s)
+
+> SELECT (SELECT count(*) FROM livro_autor) AS autorias, (SELECT count(*) FROM autor) AS autores;
+autorias | autores
+---------+--------
+0        | 2
+(1 linha)
+

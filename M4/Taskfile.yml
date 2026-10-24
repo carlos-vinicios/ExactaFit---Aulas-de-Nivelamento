@@ -1,0 +1,45 @@
+# Tarefas do projeto (Aula 5). Documentação: https://taskfile.dev
+#
+#   task            lista as tarefas
+#   task setup      instala as dependências
+#
+# Prática 3: complete as tarefas marcadas com TODO e confira com
+#   task --list
+#   task --dry --yes db:reset
+# comparando com as saídas esperadas em exercicios/aula5/p3_task/enunciado.md.
+
+version: '3'
+
+# Carrega DATABASE_URL (e o que mais houver) do arquivo .env, se ele existir.
+dotenv: ['.env']
+
+tasks:
+  default:
+    desc: Lista as tarefas disponíveis
+    cmds:
+      - task --list
+    silent: true
+
+  setup:
+    desc: Instala as dependências do projeto
+    cmds:
+      - python -m pip install -r requirements-dev.txt
+
+  # TODO lint:ruff: roda "python -m ruff check ."
+
+  # TODO lint:mypy: roda "python -m mypy ferramentas exercicios/aula4/p3_python"
+
+  # TODO check: roda lint:ruff e lint:mypy em paralelo (use deps)
+
+  # TODO db:up: sobe o PostgreSQL com docker compose e espera ficar pronto
+
+  # TODO db:down: para o PostgreSQL (sem apagar os dados)
+
+  # TODO db:psql: abre o psql dentro do contêiner (dica: interactive: true)
+
+  # TODO db:migrate: aplica as migrações pendentes
+
+  # TODO db:seed: insere os dados de exemplo (python ferramentas/semear.py)
+
+  # TODO db:reset: desfaz todas as migrações, aplica de novo e semeia
+  #      (chame as outras tarefas em vez de repetir os comandos)

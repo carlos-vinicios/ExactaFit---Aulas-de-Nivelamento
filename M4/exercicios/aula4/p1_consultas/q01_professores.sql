@@ -1,0 +1,20 @@
+-- Q01. Nome e e-mail de todos os professores, em ordem alfabética de nome.
+-- Colunas: nome, email
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p1_consultas/q01_professores.sql
+--
+-- Resultado esperado:
+--   nome             | email
+--   -----------------+----------------------------
+--   André Nogueira   | andre.nogueira@escola.edu
+--   Camila Rocha     | camila.rocha@escola.edu
+--   Fernando Gomes   | fernando.gomes@escola.edu
+--   Helena Prado     | helena.prado@escola.edu
+--   Juliana Teixeira | juliana.teixeira@escola.edu
+--   Marcos Vieira    | marcos.vieira@escola.edu
+--   Otávio Rezende   | otavio.rezende@escola.edu
+--   Patrícia Lopes   | patricia.lopes@escola.edu
+--   Ricardo Moura    | ricardo.moura@escola.edu
+--   (9 linhas)
+

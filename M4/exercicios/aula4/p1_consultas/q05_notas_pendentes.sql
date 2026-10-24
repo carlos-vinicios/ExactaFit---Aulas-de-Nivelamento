@@ -1,0 +1,13 @@
+-- Q05. Quantas matrículas ainda estão sem nota lançada?
+-- Atenção: "sem nota" é NULL, e NULL não se compara com =.
+-- Uma linha e uma coluna, chamada pendentes
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p1_consultas/q05_notas_pendentes.sql
+--
+-- Resultado esperado:
+--   pendentes
+--   ---------
+--   84
+--   (1 linha)
+

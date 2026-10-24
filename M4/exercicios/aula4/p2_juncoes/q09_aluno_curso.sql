@@ -1,0 +1,18 @@
+-- Q09. Nome de cada aluno e a sigla do curso dele, em ordem de nome.
+-- Colunas: nome, sigla
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p2_juncoes/q09_aluno_curso.sql
+--
+-- Resultado esperado:
+--   nome                | sigla
+--   --------------------+------
+--   Amanda Souza        | SI
+--   Ana Beatriz Souza   | CC
+--   Bernardo Melo       | SI
+--   Bruno Costa         | CC
+--   ...
+--   Íris Carvalho       | CC
+--   Úrsula Campos       | SI
+--   (45 linhas)
+

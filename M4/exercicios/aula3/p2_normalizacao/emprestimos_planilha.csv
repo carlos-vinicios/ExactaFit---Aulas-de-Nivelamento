@@ -1,0 +1,10 @@
+emprestimo,data_emprestimo,data_devolucao,leitor_nome,leitor_email,leitor_telefone,isbn,titulo,ano,editora,autores,tombo,estado
+1,2026-03-02,2026-03-12,Lara Pinheiro,lara.pinheiro@campus.edu,(11) 98877-1001,978-85-359-0277-6,Dom Casmurro,1899,Penguin,Machado de Assis,T0001,bom
+2,2026-03-02,2026-03-20,Caio Teles,caio.teles@campus.edu,(11) 97766-2002,978-85-7522-389-2,Pense em Python,2016,Novatec,Allen B. Downey,T0010,regular
+3,2026-03-05,,Lara Pinheiro,lara.pinheiro@campus.edu,(11) 98877-1001,978-85-7522-389-2,Pense em Python,2016,Novatec,Allen B. Downey,T0011,bom
+4,2026-03-09,2026-03-16,Nina Okada,nina.okada@campus.edu,(21) 96655-3003,978-85-352-8645-1,Sistemas de Banco de Dados,2019,Pearson,"Ramez Elmasri, Shamkant B. Navathe",T0020,bom
+5,2026-03-10,2026-03-24,Caio Teles,caio.teles@campus.edu,(11) 97766-2002,978-85-359-0277-6,Dom Casmurro,1899,Penguin,Machado de Assis,T0002,danificado
+6,2026-03-17,,Nina Okada,nina.okada@campus.edu,(21) 96655-3003,978-85-216-2930-4,Introdução a Sistemas de Bancos de Dados,2004,Elsevier,C. J. Date,T0030,regular
+7,2026-03-18,2026-03-25,Lara Pinheiro,lara.pinheiro@campus.edu,(11) 91234-5678,978-85-352-8645-1,Sistemas de Banco de Dados,2019,Pearson,"Ramez Elmasri, Shamkant B. Navathe",T0021,bom
+8,2026-03-23,,Caio Teles,caio.teles@campus.edu,(11) 97766-2002,978-85-352-8645-1,Sistemas de Banco de Dados,2019,Pearson,"Ramez Elmasri, Shamkant B. Navathe",T0020,bom
+9,2026-03-26,,Rui Batista,rui.batista@campus.edu,(31) 95544-4004,978-85-359-0277-6,Dom Casmurro,1900,Penguin,Machado de Assis,T0001,bom

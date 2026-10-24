@@ -1,0 +1,21 @@
+-- DESAFIO DA AULA 4. Os três alunos com maior média em 2026.1 em cada curso.
+-- Colunas: sigla, posicao, nome, media (arredondada em 2 casas)
+-- Ordem: sigla, posicao. Em caso de empate na média, desempate pelo nome.
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/desafio/top3_por_curso.sql
+--
+-- Resultado esperado:
+--   sigla | posicao | nome            | media
+--   ------+---------+-----------------+------
+--   CC    | 1       | Diego Ramos     | 8.53
+--   CC    | 2       | Bruno Costa     | 8.1
+--   CC    | 3       | Lucas Martins   | 8.0
+--   ES    | 1       | Thiago Moreira  | 8.0
+--   ES    | 2       | Renato Bezerra  | 7.6
+--   ES    | 3       | Priscila Rangel | 7.23
+--   SI    | 1       | Zeca Lacerda    | 9.2
+--   SI    | 2       | Cecília Araújo  | 8.1
+--   SI    | 3       | Sofia Ribeiro   | 7.93
+--   (9 linhas)
+

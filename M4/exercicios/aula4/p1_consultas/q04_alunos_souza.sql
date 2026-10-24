@@ -1,0 +1,14 @@
+-- Q04. Matrícula e nome dos alunos que têm "Souza" no nome, em ordem de nome.
+-- Colunas: matricula, nome
+--
+-- Execute, a partir da pasta M4:
+--   python ferramentas/sql.py escola.db exercicios/aula4/p1_consultas/q04_alunos_souza.sql
+--
+-- Resultado esperado:
+--   matricula | nome
+--   ----------+------------------
+--   2025018   | Amanda Souza
+--   2025001   | Ana Beatriz Souza
+--   2025006   | Heitor Souza
+--   (3 linhas)
+
