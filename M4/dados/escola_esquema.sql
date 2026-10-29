@@ -39,7 +39,7 @@ CREATE TABLE turma (
     disciplina_id INTEGER NOT NULL REFERENCES disciplina (id),
     professor_id  INTEGER NOT NULL REFERENCES professor (id),
     semestre      TEXT    NOT NULL,              -- '2026.1'
-    UNIQUE (disciplina_id, semestre)
+    UNIQUE (disciplina_id, semestre) --- Regra da tua tabela
 );
 
 CREATE TABLE matricula (

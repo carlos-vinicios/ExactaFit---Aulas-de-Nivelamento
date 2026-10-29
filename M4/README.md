@@ -8,14 +8,14 @@ Alembic e os exercícios.
 |---|---|---|
 | 3 | Modelo relacional: entidades, chaves, cardinalidade e SQL | `exercicios/aula3` |
 | 4 | SQL na prática: operações e relações entre tabelas | `exercicios/aula4` |
-| 5 | SQLite e PostgreSQL, migrações e automação com Task | `exercicios/aula5` |
+| 5 | SQLite e PostgreSQL, migrações e modelos com SQLAlchemy | `exercicios/aula5` |
 
 ## Preparação
 
 Requisitos: Python 3.13 instalado com pyenv (`pyenv install 3.13.0`; o arquivo
 `.python-version`, na raiz do repositório, seleciona a versão em todas as pastas). Para a
 Aula 5, também o [Docker](https://docs.docker.com/get-started/get-docker/) (ou o PostgreSQL
-instalado na máquina) e o [Task](https://taskfile.dev/docs/installation).
+instalado na máquina).
 
 O ambiente virtual fica na raiz do repositório (é o `.venv` que o VS Code procura) e serve
 para o M3 e o M4. Os comandos deste módulo rodam dentro da pasta `M4`:
@@ -97,13 +97,12 @@ Cada prática tem um enunciado e uma forma de conferir o resultado, sem testes a
 | `aula4/desafio` | ranking por curso com funções de janela | resultado esperado no topo do arquivo |
 | `aula5/p1_postgres` | PostgreSQL com Docker, psql e comparação com o SQLite | `respostas.md` |
 | `aula5/p2_migracoes` | primeira revisão do Alembic (`migracoes/versions/`) | `conferir.sql` e saídas no enunciado |
-| `aula5/p3_task` | completar o `Taskfile.yml` da pasta M4 | `task --list` e `task --dry` |
-| `aula5/desafio` | migração com dados: situação da matrícula | `conferir.sql` e saída no enunciado |
+| `aula5/p3_modelos` | modelos SQLAlchemy: explorar, acompanhar a 0002 e consultar (`consultas_orm.py`) | saída esperada na docstring |
+| `aula5/desafio` | migração com dados e modelo: situação da matrícula | `conferir.sql` e saída no enunciado |
 
 ## PostgreSQL (Aula 5)
 
 ```bash
-cp .env.exemplo .env              # Windows: copy .env.exemplo .env
 docker compose up -d --wait
 # Linux e macOS
 export DATABASE_URL=postgresql+psycopg://escola:escola@localhost:5432/escola
@@ -114,4 +113,16 @@ python ferramentas/semear.py
 docker compose exec db psql -U escola -d escola
 ```
 
-Depois da Prática 3, os mesmos passos viram `task db:up` e `task db:reset`.
+A variável `DATABASE_URL` vale só no terminal em que foi definida. Para voltar ao SQLite, abra
+um terminal novo ou rode `unset DATABASE_URL` (PowerShell: `Remove-Item Env:DATABASE_URL`).
+
+## Modelos SQLAlchemy (Aula 5)
+
+A pasta `modelo_de_dados/` descreve as tabelas da escola em classes Python, um modelo por
+arquivo, e tem três scripts de demonstração. Veja `modelo_de_dados/README.md`.
+
+```bash
+python -m modelo_de_dados.uso_consultas
+python -m modelo_de_dados.uso_relacionamentos
+python -m modelo_de_dados.uso_alteracoes
+```

@@ -70,8 +70,10 @@ matriculas
 Depois, `alembic downgrade 0002` deve remover a coluna e manter as 210 matrículas. Confira
 com `SELECT situacao FROM matricula;`, que passa a dar erro (`no such column: situacao`).
 
-Depois, aplique a migração nos dois bancos usando as tarefas do seu `Taskfile.yml`
-(Prática 3) e confira o resultado com uma consulta que conte as matrículas por situação.
+Depois, aplique a migração também no PostgreSQL (`alembic upgrade head`, no terminal com
+`DATABASE_URL`) e leve a coluna nova para o modelo: acrescente `situacao` ao `Matricula` de
+`modelo_de_dados/modelos/matricula.py`. Confira nos dois bancos com uma contagem por situação
+feita pelos modelos, com `select(Matricula.situacao, func.count())` e `group_by`.
 
 Pistas:
 
@@ -82,13 +84,13 @@ Pistas:
 * `CHECK` no SQLite só pode ser criado recriando a tabela: use `batch_alter_table` e
   `create_check_constraint`. <https://alembic.sqlalchemy.org/en/latest/batch.html>
 
-Por fim, rode `task db:reset --yes` e conte de novo as matrículas por situação. Todas ficam
-`cursando`, inclusive as que têm nota. Por que isso acontece, se a sua migração calcula a
-situação a partir da nota?
+Por fim, recrie o banco do zero, como na Prática 2: `alembic downgrade base`,
+`alembic upgrade head` e `python ferramentas/semear.py`. Conte de novo as matrículas por
+situação. Todas ficam `cursando`, inclusive as que têm nota. Por que isso acontece, se a sua
+migração calcula a situação a partir da nota?
 
-Entrega: o arquivo da migração, com a conferência igual à esperada nos dois bancos, e, num
-comentário no topo do arquivo,
-as respostas:
+Entrega: o arquivo da migração, com a conferência igual à esperada nos dois bancos, o modelo
+`Matricula` com a coluna nova e, num comentário no topo do arquivo da migração, as respostas:
 
-1. Por que o `task db:reset` deixou tudo `cursando`? Proponha uma correção.
+1. Por que recriar o banco do zero deixou tudo `cursando`? Proponha uma correção.
 2. Se a regra de aprovação mudar para nota 7, você edita a 0003 ou cria a 0004? Por quê?
