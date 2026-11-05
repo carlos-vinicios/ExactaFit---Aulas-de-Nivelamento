@@ -1,0 +1,11 @@
+# Pacotes para EXECUTAR o sistema (gerado com pip freeze e conferido à mão).
+# SQLAlchemy e psycopg: acesso ao banco pelo ORM (Aula 7). Pydantic: schemas de entrada (Aula 7).
+# As versões são as mesmas do M4: o .venv da raiz serve aos dois módulos.
+annotated-types==0.8.0
+psycopg==3.3.6
+psycopg-binary==3.3.6
+pydantic==2.14.1
+pydantic_core==2.50.1
+SQLAlchemy==2.1.4
+typing-inspection==0.4.4
+typing_extensions==4.16.0
