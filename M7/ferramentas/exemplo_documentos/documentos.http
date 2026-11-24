@@ -1,0 +1,44 @@
+# Aula 9, exemplo: upload e download de documentos de um aluno.
+# Suba a API (uvicorn secretaria.api.app:app --reload) e envie os pedidos em ordem.
+# Os arquivos enviados ficam em M7/documentos/<matrícula>/. Para recomeçar, apague essa pasta.
+
+@base = http://127.0.0.1:8000
+
+### 1. Enviar um PDF (o corpo é multipart/form-data, e não JSON)
+POST {{base}}/alunos/2025001/documentos
+Content-Type: multipart/form-data; boundary=limite
+
+--limite
+Content-Disposition: form-data; name="arquivo"; filename="atestado.pdf"
+Content-Type: application/pdf
+
+< ./atestado.pdf
+--limite--
+
+### 2. Os documentos do aluno
+GET {{base}}/alunos/2025001/documentos
+
+### 3. Baixar o arquivo (no REST Client, a resposta mostra o PDF)
+GET {{base}}/alunos/2025001/documentos/atestado.pdf
+
+### 4. Um tipo que a escola não aceita
+POST {{base}}/alunos/2025001/documentos
+Content-Type: multipart/form-data; boundary=limite
+
+--limite
+Content-Disposition: form-data; name="arquivo"; filename="anotacoes.txt"
+Content-Type: text/plain
+
+< ./anotacoes.txt
+--limite--
+
+### 5. O mesmo nome de novo
+POST {{base}}/alunos/2025001/documentos
+Content-Type: multipart/form-data; boundary=limite
+
+--limite
+Content-Disposition: form-data; name="arquivo"; filename="atestado.pdf"
+Content-Type: application/pdf
+
+< ./atestado.pdf
+--limite--

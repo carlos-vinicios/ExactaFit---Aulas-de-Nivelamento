@@ -1,5 +1,6 @@
 # Pacotes para EXECUTAR a API (gerado com pip freeze e conferido à mão).
-# FastAPI e Uvicorn: a API (Aulas 9 e 10). SQLAlchemy, psycopg e Pydantic: os mesmos do M5.
+# FastAPI e Uvicorn: a API (Aulas 9 e 10); python-multipart: upload de arquivos (Aula 9).
+# SQLAlchemy, psycopg e Pydantic: os mesmos do M5.
 # As versões em comum com o M4 e o M5 são as mesmas: o .venv da raiz serve a todos os módulos.
 annotated-doc==0.0.6
 annotated-types==0.8.0
@@ -13,6 +14,7 @@ psycopg==3.3.6
 psycopg-binary==3.3.6
 pydantic==2.14.1
 pydantic_core==2.50.1
+python-multipart==0.0.34
 SQLAlchemy==2.1.4
 starlette==1.10.0
 typing-inspection==0.4.4

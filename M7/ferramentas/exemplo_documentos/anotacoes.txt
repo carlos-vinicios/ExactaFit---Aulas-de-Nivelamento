@@ -1,0 +1,2 @@
+Anotações da aula 9.
+Este arquivo de texto serve para ver a API recusar um tipo não aceito.

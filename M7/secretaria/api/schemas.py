@@ -10,6 +10,7 @@ from pydantic import BaseModel, ConfigDict
 from secretaria.dominio import (
     Aluno,
     Boletim,
+    Documento,
     Linha,
     PosicaoRanking,
     RelatorioTurma,
@@ -95,6 +96,14 @@ class RankingSaida(Saida):
     posicoes: list[PosicaoSaida]
 
 
+class DocumentoSaida(Saida):
+    """Um documento guardado do aluno (exemplo de upload da Aula 9)."""
+
+    nome: str
+    tipo: str
+    tamanho: int
+
+
 # Entrada: o que vem no corpo das requisições. Matrícula, código e semestre vêm no caminho.
 class NotaEntrada(BaseModel):
     """Corpo do lançamento de nota."""
@@ -115,6 +124,12 @@ class MatriculaEntrada(BaseModel):
 # Conversões: do domínio para o contrato.
 def aluno_saida(aluno: Aluno) -> AlunoSaida:
     return AlunoSaida(matricula=aluno.matricula, nome=aluno.nome, curso=aluno.curso)
+
+
+def documento_saida(documento: Documento) -> DocumentoSaida:
+    return DocumentoSaida(
+        nome=documento.nome, tipo=documento.tipo, tamanho=documento.tamanho
+    )
 
 
 def turma_saida(turma: Turma) -> TurmaSaida:

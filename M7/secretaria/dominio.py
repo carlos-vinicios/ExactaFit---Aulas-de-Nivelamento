@@ -63,6 +63,16 @@ class RelatorioTurma:
 
 
 @dataclass(frozen=True, slots=True)
+class Documento:
+    """Um arquivo guardado para um aluno (M7, Aula 9: exemplo de upload)."""
+
+    matricula: str
+    nome: str
+    tipo: str  # tipo de mídia, como application/pdf
+    tamanho: int  # em bytes
+
+
+@dataclass(frozen=True, slots=True)
 class PosicaoRanking:
     posicao: int
     aluno: Aluno

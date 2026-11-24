@@ -9,16 +9,17 @@ schemas.
 from fastapi import FastAPI
 
 from . import erros
-from .rotas import alunos, cursos, turmas
+from .rotas import alunos, cursos, documentos, turmas
 
 app = FastAPI(
     title="API da secretaria",
     version="1.0",
-    description="Boletins, turmas, matrículas e notas da escola (M7).",
+    description="Boletins, turmas, matrículas, notas e documentos da escola (M7).",
 )
 app.include_router(alunos.rotas)
 app.include_router(turmas.rotas)
 app.include_router(cursos.rotas)
+app.include_router(documentos.rotas)
 erros.registrar(app)
 
 

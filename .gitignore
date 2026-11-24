@@ -5,3 +5,6 @@ __pycache__/
 
 *.db
 .env
+
+# documentos enviados pelo exemplo de upload da Aula 9
+M7/documentos/
