@@ -1,0 +1,13 @@
+# Pacotes do desafio extra da Aula 10 (a API de modelos), além dos do M7.
+# Instale com:  pip install -r exercicios/aula10/desafio_extra/requirements.txt
+# O OCR também precisa do programa Tesseract (veja o README desta pasta).
+-r ../../../requirements.txt
+joblib==1.6.0
+narwhals==2.29.0
+numpy==2.5.5
+packaging==26.4
+pillow==13.0.0
+pytesseract==0.3.13
+scikit-learn==1.9.1
+scipy==1.18.1
+threadpoolctl==3.8.0

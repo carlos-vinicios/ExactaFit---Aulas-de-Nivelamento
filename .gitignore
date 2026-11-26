@@ -8,3 +8,7 @@ __pycache__/
 
 # documentos enviados pelo exemplo de upload da Aula 9
 M7/documentos/
+
+# desafio extra da Aula 10: modelo treinado e imagens geradas
+*.joblib
+M7/exercicios/aula10/desafio_extra/*.png

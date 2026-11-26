@@ -124,6 +124,7 @@ arquivos `.http` trazem os pedidos. Procure os `TODO` no código.
 | 10 | `exercicios/aula10/p2_422` | o 422 em português, campo a campo |
 | 10 | `exercicios/aula10/p3_409_503_500` | regras (409), banco fora do ar (503), erro inesperado (500) e /docs |
 | 10 | `exercicios/aula10/desafio` | todo erro no mesmo formato, inclusive os do FastAPI |
+| 10 | `exercicios/aula10/desafio_extra` | uma API separada de modelos: OCR de documentos e previsão de nota (porta 8003) |
 
 Para conferir estilo e tipos: `ruff check .` e `mypy --strict secretaria`.
 
